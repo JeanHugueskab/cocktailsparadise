@@ -1,15 +1,20 @@
-require 'open-uri'
-
-puts "Destroy ingredients"
-Ingredient.destroy_all if Rails.env.development?
-
-puts "Destroy Cocktails"
-Cocktail.destroy_all if Rails.env.development?
-
-puts "Create ingredients"
-url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-ingredients = JSON.parse(open(url).read)
-ingredients["drinks"].each do |ingredient|
-  i = Ingredient.create(name: ingredient["strIngredient1"])
-  puts "create #{i.name}"
-end
+Ingredient.create(name: "lemon")
+Ingredient.create(name: "ice")
+Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "Wodka")
+Ingredient.create(name: "Sekt")
+Ingredient.create(name: "Aperol")
+Ingredient.create(name: "Orange")
+Ingredient.create(name: "Sparkling water")
+Ingredient.create(name: "japanese")
+Ingredient.create(name: "whiskey")
+Ingredient.create(name: "vodka")
+Ingredient.create(name: "flower water")
+Ingredient.create(name: "simple syrup")
+Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "Club Soda")
+Ingredient.create(name: "Matcha")
+Ingredient.create(name: "Sekt")
+Ingredient.create(name: "Aperol")
+Ingredient.create(name: "Orange")
+Ingredient.create(name: "Sparkling water")
